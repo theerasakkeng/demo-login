@@ -28,7 +28,7 @@ const Login = (props) => {
                 onChange={e => setPassword(e.target.value)}
                 />
                 {error&& <Grid className="error">{error}</Grid>}
-                <Link to="/map"><Button style={buttonStyle} type="submit" color="primary" variant="contained" fullWidth
+                <Link to="/map" style={{textDecoration:"none"}}><Button style={buttonStyle} type="submit" color="primary" variant="contained" fullWidth
                 value={loading ? "Loading..." :"Login"}
                 disabled={loading}
                 >Sign In</Button></Link>
