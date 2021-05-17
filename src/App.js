@@ -1,16 +1,18 @@
 import Login from './Components/Login/Login.js'
-import Map from './Components/Map/Map.js'
+import Mapview from './Components/Map/Mapview.js'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {AutProvider} from './Components/AutContext/AutContext.js'
 
 import './App.css';
 
 function App() {
   return (
+    <AutProvider>
     <Router>
       <div className="App">
         <Switch>
         <Route path="/map">
-            <Map />
+            <Mapview />
           </Route>
           <Route path="/">
             <Login />
@@ -18,6 +20,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+    </AutProvider>
   );
 }
 
