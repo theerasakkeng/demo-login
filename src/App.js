@@ -2,7 +2,6 @@ import Login from './Components/Login/Login.js'
 import Mapview from './Components/Map/Mapview.js'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {AutProvider} from './Components/AutContext/AutContext.js'
-
 import './App.css';
 
 function App() {
