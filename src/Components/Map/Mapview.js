@@ -8,18 +8,20 @@ const Mapview = () => {
         const mapRender = new Map({
             container: "map1",
             style: 'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
-            center: [101.554894, 13.721237],
+            center: [100.523186, 13.736717],
             zoom: 10
         });
-        mapRender.on('click', function () {
-            const popup = new Popup({ offset:25}).setText('กรุงเทพมหานคร');
-
-            const el = document.createElement('div');
-            el.className = 'marker';
         
         mapRender.on('load',function(){
-            const marker = new Marker(el).setLngLat([100.523186, 13.736717]).setPopup(popup).addTo(mapRender);
-        })
+            const marker = new Marker().setLngLat([100.523186, 13.736717]).addTo(mapRender);
+        });
+        mapRender.on('click',function (e){
+            var coordinates = [100.523186, 13.736717];
+            var description = "กรุงเทพ"
+            while (Math.abs(e.lngLat.lng - coordinates) > 180) {
+                coordinates += e.lngLat.lng > coordinates ? 360 : -360;
+                }
+        var popup = new Popup().setLngLat(coordinates).setHTML(description).addTo(mapRender)        
         });
         
         setMount(mapRender);
