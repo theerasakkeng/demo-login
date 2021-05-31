@@ -1,15 +1,14 @@
-.marker {
-    background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    }
 .mapboxgl-popup {
     max-width: 400px;
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     }   
-#map {
-     position: absolute; top: 0; bottom: 0; width: 100%; 
-    }   
+.mapboxgl-marker{
+    cursor: pointer;
+}
+.menu--nav{
+    display: flex;
+    list-style-type: none;
+    z-index: 1;
+    position:absolute;
+    justify-content: ce;
+}
